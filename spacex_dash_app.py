@@ -81,10 +81,10 @@ def get_pie_chart(entered_site):
             title='Success launches by CCAFS LC-40')
             return fig
         elif entered_site == 'KSC':
-            data = data[data['Launch Site'] == 'KSC LC 39-A']['class'].value_counts()
+            data = data[data['Launch Site'] == 'KSC LC-39A']['class'].value_counts()
             fig = px.pie(data, values=data.values,
             names=data.index,  
-            title='Success launches by KSC LC 39-A')
+            title='Success launches by KSC LC-39A')
             return fig
         else:
             data = data[data['Launch Site'] == 'VAFB SLC-4E']['class'].value_counts()
@@ -120,10 +120,10 @@ def get_scatter_chart(entered_site, payload_range):
             title='Correlation between Payload and Success for CCAFS LC-40')
             return fig
         elif entered_site == 'KSC':
-            data = data[data['Launch Site'] == 'KSC LC 39-A']
+            data = data[data['Launch Site'] == 'KSC LC-39A']
             fig = px.scatter(data[mask], x='Payload Mass (kg)', 
             y='class', color="Booster Version Category",
-            title='Correlation between Payload and Success for KSC LC 39-A')
+            title='Correlation between Payload and Success for KSC LC-39A')
             return fig
         else:
             data = data[data['Launch Site'] == 'VAFB SLC-4E']
